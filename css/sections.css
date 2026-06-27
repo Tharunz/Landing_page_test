@@ -1,0 +1,197 @@
+/* sections.css */
+
+/* Generic Section */
+.section {
+  padding: var(--space-24) 0;
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.section-title h2 {
+  margin-bottom: var(--space-4);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: var(--color-bg-primary);
+  overflow: hidden;
+  padding-top: var(--space-24); /* Account for nav */
+}
+
+/* Fluid Gradient Mesh Background */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-mesh);
+  opacity: 0.7;
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(60px);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 992px) {
+  .hero-content {
+    margin: 0 auto;
+    max-width: 700px;
+  }
+}
+
+.hero h1 {
+  margin-bottom: var(--space-6);
+  background: linear-gradient(to right, #0a0a0a, #52525b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: clamp(2.5rem, 4vw + 1rem, 4rem);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.hero p {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-8);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 992px) {
+  .hero-actions {
+    justify-content: center;
+  }
+}
+
+/* Quick Info List in Hero */
+.hero-quick-info {
+  display: flex;
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+@media (max-width: 992px) {
+  .hero-quick-info {
+    justify-content: center;
+  }
+}
+
+.hero-quick-info span {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Hero Overlapping Image Collage */
+.hero-collage {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Base height for the composition */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.collage-img-1 {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  width: 65%;
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-2xl);
+  z-index: 1;
+  border: 1px solid var(--color-border);
+}
+
+.collage-img-2 {
+  position: absolute;
+  bottom: 5%;
+  right: 0;
+  width: 55%;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  border: 1px solid var(--color-border);
+}
+
+/* Features Section (Using Bento Grid implicitly via HTML) */
+.features {
+  background-color: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Styling specific bento items in features if needed */
+.feature-bento-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--space-8);
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: var(--color-bg-primary);
+}
+
+.feature-bento-item h3 {
+  margin-bottom: var(--space-2);
+}
+
+.feature-bento-item .icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--gradient-accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-6);
+}
+
+/* Footer */
+.footer {
+  padding: var(--space-16) 0 var(--space-8);
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-bg-primary);
+}
